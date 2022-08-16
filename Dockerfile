@@ -6,13 +6,9 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-
-# COPY src/logic/contracts/artifacts ./src/logic/contracts/artifacts
+COPY . .
 
 RUN yarn install
-
-COPY . .
 
 EXPOSE 3000
 
